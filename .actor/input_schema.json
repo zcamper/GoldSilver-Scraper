@@ -1,22 +1,33 @@
 {
-    "title": "GoldSilver.com Scraper Input",
+    "title": "SITE_PLACEHOLDER Scraper Input",
     "type": "object",
     "schemaVersion": 1,
     "properties": {
         "search_terms": {
             "title": "Search Terms",
             "type": "array",
-            "description": "Search terms to find products (e.g., 'Silver coin', 'gold bar'). Each term runs a search on goldsilver.com.",
+            "description": "Search terms to find products (e.g., 'Silver coin', 'gold eagles').",
             "editor": "stringList",
-            "items": { "type": "string" },
+            "items": {
+                "type": "string"
+            },
             "prefill": ["Silver coin"]
         },
         "start_urls": {
             "title": "Start URLs (Optional)",
             "type": "array",
-            "description": "Optional: specific category or product URLs to scrape directly.",
+            "description": "Optional: specific category or product URLs to scrape directly instead of searching.",
             "editor": "requestListSources",
-            "items": { "type": "object", "properties": { "url": { "type": "string", "title": "URL" } } }
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "title": "URL",
+                        "description": "URL of a category or product page"
+                    }
+                }
+            }
         },
         "max_items": {
             "title": "Max Items",
@@ -30,10 +41,14 @@
         "proxyConfiguration": {
             "title": "Proxy Configuration",
             "type": "object",
-            "description": "Select proxy to use for scraping.",
+            "description": "Select proxy to use for scraping. Residential proxies are recommended to avoid blocking.",
             "editor": "proxy",
-            "prefill": { "useApifyProxy": true },
-            "default": { "useApifyProxy": true }
+            "prefill": {
+                "useApifyProxy": true
+            },
+            "default": {
+                "useApifyProxy": true
+            }
         }
     },
     "required": []
