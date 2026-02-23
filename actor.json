@@ -1,0 +1,10 @@
+{
+    "actorSpecification": 1,
+    "name": "goldsilver-scraper",
+    "title": "GoldSilver.com Scraper",
+    "description": "Scrapes product data from GoldSilver.com. Extracts product name, price, image, SKU, availability, and description.",
+    "version": "0.0",
+    "input": "./.actor/input_schema.json",
+    "dataset": "./.actor/dataset_schema.json",
+    "dockerfile": "./Dockerfile"
+}

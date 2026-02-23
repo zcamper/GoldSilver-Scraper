@@ -1,0 +1,40 @@
+{
+    "title": "GoldSilver.com Scraper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "search_terms": {
+            "title": "Search Terms",
+            "type": "array",
+            "description": "Search terms to find products (e.g., 'Silver coin', 'gold bar'). Each term runs a search on goldsilver.com.",
+            "editor": "stringList",
+            "items": { "type": "string" },
+            "prefill": ["Silver coin"]
+        },
+        "start_urls": {
+            "title": "Start URLs (Optional)",
+            "type": "array",
+            "description": "Optional: specific category or product URLs to scrape directly.",
+            "editor": "requestListSources",
+            "items": { "type": "object", "properties": { "url": { "type": "string", "title": "URL" } } }
+        },
+        "max_items": {
+            "title": "Max Items",
+            "type": "integer",
+            "description": "Maximum number of products to scrape.",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 1000,
+            "editor": "number"
+        },
+        "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "type": "object",
+            "description": "Select proxy to use for scraping.",
+            "editor": "proxy",
+            "prefill": { "useApifyProxy": true },
+            "default": { "useApifyProxy": true }
+        }
+    },
+    "required": []
+}
